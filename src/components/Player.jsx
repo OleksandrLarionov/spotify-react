@@ -9,23 +9,14 @@ const Player = () => {
 		(state) => state.favorites.playerSong && state.favorites.playerSong[0]
 	);
 	return (
-		<>
-			{' '}
+		playSongs && (
 			<div class='container-fluid fixed-bottom bg-container pt-1'>
 				<div class='row h-100'>
 					<div class='col-lg-10 offset-lg-2'>
-						<div>
-							{playSongs && (
-								<img
-									src={playSongs.album.cover_medium}
-									width={50}
-									height={50}
-									alt='track'
-								/>
-							)}
-						</div>
-
 						<div class='row h-100 flex-column justify-content-center align-items-center'>
+							<div className='d-flex justify-content-center'>
+								<img src={playSongs.album.cover_small} height={50} width={50} alt='track' />
+							</div>
 							<div class='col-6 col-md-4 playerControls'>
 								<div class='d-flex'>
 									<a href='#'>
@@ -52,7 +43,7 @@ const Player = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		)
 	);
 };
 export default Player;
