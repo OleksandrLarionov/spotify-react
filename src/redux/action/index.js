@@ -26,7 +26,7 @@ export const musicFetch = (genreMusical) => {
 			);
 			if (response.ok) {
 				let { data } = await response.json();
-				console.log(data);
+
 				dispatch({ type: GET_STATIC_DATA, payload: data });
 			} else {
 				throw new Error('Error in fetching songs');
