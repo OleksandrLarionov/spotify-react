@@ -7,7 +7,7 @@ const FavoriteList = () => {
 		favSongs &&
 		favSongs.map((fav, i) => {
 			return (
-				<ListGroup.Item fluid key={i} className='bg-transparent text-white border-0 '>
+				<ListGroup.Item key={i} className='bg-transparent text-white border-0 '>
 					{fav.album.title} | {fav.artist.name}
 				</ListGroup.Item>
 			);
