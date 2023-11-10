@@ -1,6 +1,6 @@
 import { Col, Row } from 'react-bootstrap';
 import ButtonFav from './ButtonFav';
-import { getFavorite } from '../redux/action';
+import { getFavorite, playerAdd } from '../redux/action';
 import { useDispatch } from 'react-redux';
 
 const Genre = ({ genre }) => {
@@ -15,7 +15,7 @@ const Genre = ({ genre }) => {
 						alt='track'
 						onClick={(e) => {
 							e.preventDefault();
-							dispatch(getFavorite(genre));
+							dispatch(playerAdd(genre));
 						}}
 					/>{' '}
 					<ButtonFav song={genre} />

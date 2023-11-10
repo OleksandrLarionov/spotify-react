@@ -1,7 +1,8 @@
-import { GET_FAVORITE_SONG } from '../action';
+import { GET_FAVORITE_SONG, GET_PLAYER_SONG } from '../action';
 
 const initialState = {
 	favoriteSong: [],
+	playerSong: [],
 };
 
 const favoriteSongReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const favoriteSongReducer = (state = initialState, action) => {
 			return {
 				...state,
 				favoriteSong: [...state.favoriteSong, action.payload],
+			};
+		case GET_PLAYER_SONG:
+			return {
+				...state,
+				playerSong: [action.payload],
 			};
 
 		default:

@@ -1,9 +1,14 @@
 export const GET_MUSIC_DATA = 'GET_MUSIC_DATA';
 export const GET_FAVORITE_SONG = 'GET_FAVORITE_SONG';
 export const GET_STATIC_DATA = 'GET_STATIC_DATA';
+export const GET_PLAYER_SONG = 'GET_PLAYER_SONG';
 
 export const getFavorite = (song) => ({
 	type: GET_FAVORITE_SONG,
+	payload: song,
+});
+export const playerAdd = (song) => ({
+	type: GET_PLAYER_SONG,
 	payload: song,
 });
 export const musicFetch = (genreMusical) => {

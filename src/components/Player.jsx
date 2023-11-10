@@ -5,14 +5,26 @@ import playerRepeat from '../assets/playerbuttons/repeat.png';
 import playerShuffle from '../assets/playerbuttons/shuffle.png';
 import { useSelector } from 'react-redux';
 const Player = () => {
-	const favSongs = useSelector((state) => state.favorites.favoriteSong);
+	const playSongs = useSelector(
+		(state) => state.favorites.playerSong && state.favorites.playerSong[0]
+	);
 	return (
 		<>
 			{' '}
 			<div class='container-fluid fixed-bottom bg-container pt-1'>
 				<div class='row h-100'>
 					<div class='col-lg-10 offset-lg-2'>
-						<img src='{favSongs.album.cover_medium}' className='w-100' alt='track' />{' '}
+						<div>
+							{playSongs && (
+								<img
+									src={playSongs.album.cover_medium}
+									width={50}
+									height={50}
+									alt='track'
+								/>
+							)}
+						</div>
+
 						<div class='row h-100 flex-column justify-content-center align-items-center'>
 							<div class='col-6 col-md-4 playerControls'>
 								<div class='d-flex'>
