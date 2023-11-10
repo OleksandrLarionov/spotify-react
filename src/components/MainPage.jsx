@@ -38,7 +38,9 @@ const MainPage = () => {
 								return <Genre key={el.id} genre={el} />;
 							})}
 					</Row>
-					<h2 className='text-white ps-1 pt-3'>Classic Rock</h2>
+					<h2 className={staticDataRock ? ' d-block d-flex text-white ps-1 pt-3 ' : ' d-none'}>
+						Classic Rock
+					</h2>
 
 					<Row>
 						{staticDataRock &&
@@ -48,7 +50,9 @@ const MainPage = () => {
 								})
 								.slice(0, 4)}
 					</Row>
-					<h2 className='text-white ps-1 pt-3'>Pop Culture</h2>
+					<h2 className={staticDataPop ? ' d-block d-flex text-white ps-1 pt-3 ' : ' d-none'}>
+						Pop Culture
+					</h2>
 					<Row>
 						{staticDataPop &&
 							staticDataPop
@@ -57,7 +61,9 @@ const MainPage = () => {
 								})
 								.slice(0, 4)}
 					</Row>
-					<h2 className='text-white ps-1 pt-3'>#HipHop</h2>
+					<h2 className={staticDataHip ? ' d-block d-flex text-white ps-1 pt-3 ' : ' d-none'}>
+						#HipHop
+					</h2>
 					<Row>
 						{staticDataHip &&
 							staticDataHip
